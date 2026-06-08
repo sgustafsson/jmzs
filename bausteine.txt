@@ -1,0 +1,27 @@
+ <h3>Wer ist als nächstes dran?</h3>
+
+
+ <button class="w3-btn w3-purple">Zufallsgenerator</button>
+ <button class="w3-btn w3-purple" onclick="zufallsName()">Zufallsgenerator</button>
+
+ <p>Drücke den Knopf, um einen Namen zufällig auszuwählen.</p>
+
+  <h1 id="derName" class="w3-jumbo"></p>      
+
+function zufallsName() {
+            
+                      
+}
+
+// Liste aller Namen, aus der der Zufallsgenerator einen Namen auswählen kann
+            
+// Zufällige Zahl generieren, um damit einen Namen aus der Liste auszuwählen
+            
+// Den ausgewählten Namen an der richtigen Stelle anzeigen
+
+
+var liste_aller_namen = ["Enya", "Luise", "Charlotte", "Theodora", "Elisabeth", "Angelina", "Daniela", "Elaine", "Mehdi", "Angar", "Klaas", "Leonas", "Saleh", "Joris", "Artem", "Yusuf", "Mahir", "Aykan", "Mira"];
+
+var zufalls_zahl = Math.floor(Math.random() * liste_aller_namen.length);
+
+ document.getElementById("derName").innerHTML = liste_aller_namen[zufalls_zahl];

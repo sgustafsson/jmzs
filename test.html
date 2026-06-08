@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>4A</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
@@ -8,34 +7,32 @@
     <script>
 
         function zufallsName() {
-
             // Liste aller Namen, aus der der Zufallsgenerator einen Namen auswählen kann
             var liste_aller_namen = ["Enya", "Luise", "Charlotte", "Theodora", "Elisabeth", "Angelina", "Daniela", "Elaine", "Mehdi", "Angar", "Klaas", "Leonas", "Saleh", "Joris", "Artem", "Yusuf", "Mahir", "Aykan", "Mira"];
             // Zufällige Zahl generieren, um damit einen Namen aus der Liste auszuwählen
             var zufalls_zahl = Math.floor(Math.random() * liste_aller_namen.length);
-            console.log(zufalls_zahl)
-            // zufälligen Namen auswählen mit Hilfe dieser Zahl
-            var zufalls_name = liste_aller_namen[zufalls_zahl];
-            console.log(zufalls_name)
             // Den ausgewählten Namen an der richtigen Stelle anzeigen
-            document.getElementById("derName").innerHTML = zufalls_name;
+            document.getElementById("derName").innerHTML = liste_aller_namen[zufalls_zahl];           
         }
-
+        
     </script>
 
 </head>
 
 <body>
 
-    <div class="w3-container w3-cursive" align="center">
-        <h3 class="w3-cursive">Wer ist als nächstes dran?</h3>
+    <div class="w3-container" align="center">
+        <!-- Überschrift-->
+        <h3>Wer ist als nächstes dran?</h3>
+        <!-- Knopf um den Zufallsgenerator zu starten -->
         <button class="w3-btn w3-purple" onclick="zufallsName()">Zufallsgenerator</button>
+        <!-- Hinweistext, der eklärt was passiert wenn man den Knopf drückt -->
         <p>Drücke den Knopf, um einen Namen zufällig auszuwählen.</p>
-
     </div>
 
-    <div class="w3-container w3-cursive" align="center">
-          <h1 id="derName" class="w3-jumbo w3-cursive"></p>
+    <div class="w3-container" align="center">
+        <!-- Hier wird der zufällig ausgewählte Name angezeigt -->
+        <h1 id="derName" class="w3-jumbo"></p>        
     </div>
 
 
