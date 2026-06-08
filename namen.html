@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>4A</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+
+    <script>
+
+        function zufallsName() {
+            var liste_aller_namen = ["Enya", "Luise", "Charlotte", "Theodora", "Elisabeth", "Angelina", "Daniela", "Elaine", "Mehdi", "Angar", "Klaas", "Leonas", "Saleh", "Joris", "Artem", "Yusuf", "Mahir", "Aykan", "Mira"];
+            var zufalls_zahl = Math.floor(Math.random() * liste_aller_namen.length);
+            document.getElementById("derName").innerHTML = liste_aller_namen[zufalls_zahl];
+            var avatar_url = "https://api.dicebear.com/7.x/fun-emoji/svg?seed=" + liste_aller_namen[zufalls_zahl];
+            document.getElementById("avatar").src = avatar_url;
+        }
+        
+    </script>
+
+</head>
+
+<body>
+
+    <div class="w3-container" align="center">
+        <h3>Wer ist als nächstes dran?</h3>
+        <button class="w3-btn w3-blue" onclick="zufallsName()">Zufallsgenerator</button>
+        <p>Drücke den Knopf, um einen Namen zufällig auszuwählen.</p>
+    </div>
+
+    <div class="w3-container" align="center">
+        <p id="derName" class="w3-jumbo"></p>
+
+        <img id="avatar" src="" alt="Avatar" style="width: 15%;" class="w3-circle"/>
+    </div>
+
+
+</body>
+
+</html>
