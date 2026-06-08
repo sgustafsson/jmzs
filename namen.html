@@ -9,9 +9,7 @@
         function zufallsName() {
             var liste_aller_namen = ["Enya", "Luise", "Charlotte", "Theodora", "Elisabeth", "Angelina", "Daniela", "Elaine", "Mehdi", "Angar", "Klaas", "Leonas", "Saleh", "Joris", "Artem", "Yusuf", "Mahir", "Aykan", "Mira"];
             var zufalls_zahl = Math.floor(Math.random() * liste_aller_namen.length);
-            document.getElementById("derName").innerHTML = liste_aller_namen[zufalls_zahl];
-            var avatar_url = "https://api.dicebear.com/7.x/fun-emoji/svg?seed=" + liste_aller_namen[zufalls_zahl];
-            document.getElementById("avatar").src = avatar_url;
+            document.getElementById("derName").innerHTML = liste_aller_namen[zufalls_zahl];           
         }
         
     </script>
@@ -27,9 +25,7 @@
     </div>
 
     <div class="w3-container" align="center">
-        <p id="derName" class="w3-jumbo"></p>
-
-        <img id="avatar" src="" alt="Avatar" style="width: 15%;" class="w3-circle"/>
+        <p id="derName" class="w3-jumbo"></p>        
     </div>
 
 
