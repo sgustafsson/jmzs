@@ -6,27 +6,56 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
+        var alle_wörter = ["aktiv", "anziehen", "anschließend", "aufpassen", "außerdem", "bekannt", "Hausaufgabe", "Comic", "Dämmerung", "danach", "flüstern", "gefährden", "gemeinsam", "Gewässer", "Großeltern", "häufig", "kontrollieren", "kräftig", "LAubfrosch", "legen", "Marathon", "meistens", "Monate", "Moor", "Muffins", "müssen / er muss", "Nähe", "natürlich", "Nordpol", "ob", "Obst", "packen", "pass auf", "Picknick", "prima", "putzen", "quaken", "Radtour", "schlimm", "See", "Straße", "trocken", "Trickfilm", "unterschiedlich", "verbringen", "verkehrssicher", "vorwärts", "vorher", "windig", "zwinkern"];
+        var verbleibende_wörter = alle_wörter.slice();
+
+        function updateFortschritt() {
+            var gezeigt = alle_wörter.length - verbleibende_wörter.length;
+            var gesamt = alle_wörter.length;
+            var prozent = (gezeigt / gesamt) * 100;
+            document.getElementById("fortschrittsBalken").style.width = prozent + "%";
+            document.getElementById("fortschrittsText").innerHTML = gezeigt + " / " + gesamt;
+        }
+
         function zufallsWort() {
-            var liste_aller_wörter = ["Schmetterling", "Frühstück", "Abenteuer", "Bibliothek", "Freundschaft", "Geburtstag", "Hausaufgabe", "Jahreszeit", "Nachbarschaft", "Überraschung"];
-            var zufalls_zahl = Math.floor(Math.random() * liste_aller_wörter.length);
-            var zufalls_wort = liste_aller_wörter[zufalls_zahl];
+            if (verbleibende_wörter.length === 0) {
+                document.getElementById("dasWort").innerHTML = "Alle Wörter geübt! 🎉";
+                return;
+            }
+            var zufalls_zahl = Math.floor(Math.random() * verbleibende_wörter.length);
+            var zufalls_wort = verbleibende_wörter[zufalls_zahl];
+            verbleibende_wörter.splice(zufalls_zahl, 1);
             var anzeige = document.getElementById("dasWort");
             anzeige.innerHTML = zufalls_wort;
+            updateFortschritt();
             setTimeout(function() {
                 anzeige.innerHTML = "";
             }, 2000);
         }
+
+        function neustart() {
+            verbleibende_wörter = alle_wörter.slice();
+            document.getElementById("dasWort").innerHTML = "";
+            updateFortschritt();
+        }
+
+        window.onload = updateFortschritt;
     </script>
 </head>
 
 <body>
-    <div class="w3-container " align="center">
-        <h3 class="">Lernwörter</h3>
+    <div class="w3-container" align="center">
+        <h3>Lernwörter</h3>
         <button class="w3-btn w3-purple" onclick="zufallsWort()">Zufallsgenerator</button>
+        <button class="w3-btn w3-small w3-light-grey w3-margin-left" onclick="neustart()">Neu starten</button>
         <p>Drücke den Knopf, um ein Lernwort zufällig auszuwählen.</p>
+        <div class="w3-light-grey w3-round" style="width:60%; margin: 0 auto; text-align:left;">
+            <div id="fortschrittsBalken" class="w3-purple w3-round" style="height:20px; width:0%;"></div>
+        </div>
+        <p id="fortschrittsText" class="w3-small"></p>
     </div>
-    <div class="w3-container " align="center">
-          <h1 id="dasWort" class="w3-jumbo "></p>
+    <div class="w3-container" align="center">
+        <h1 id="dasWort" class="w3-jumbo"></h1>
     </div>
 </body>
 </html>
