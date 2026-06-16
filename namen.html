@@ -2,13 +2,11 @@
 <html>
 
 <head>
-    <title>4A</title>
+    <title>Wer ist dran</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
-
         function zufallsName() {
-
             // Liste aller Namen, aus der der Zufallsgenerator einen Namen auswählen kann
             var liste_aller_namen = ["Enya", "Luise", "Charlotte", "Theodora", "Elisabeth", "Angelina", "Daniela", "Elaine", "Mehdi", "Angar", "Klaas", "Leonas", "Saleh", "Joris", "Artem", "Yusuf", "Mahir", "Aykan", "Mira"];
             // Zufällige Zahl generieren, um damit einen Namen aus der Liste auszuwählen
@@ -20,25 +18,17 @@
             // Den ausgewählten Namen an der richtigen Stelle anzeigen
             document.getElementById("derName").innerHTML = zufalls_name;
         }
-
     </script>
-
 </head>
 
 <body>
-
     <div class="w3-container " align="center">
         <h3 class="">Wer ist als nächstes dran?</h3>
         <button class="w3-btn w3-purple" onclick="zufallsName()">Zufallsgenerator</button>
         <p>Drücke den Knopf, um einen Namen zufällig auszuwählen.</p>
-
     </div>
-
     <div class="w3-container " align="center">
           <h1 id="derName" class="w3-jumbo "></p>
     </div>
-
-
 </body>
-
 </html>

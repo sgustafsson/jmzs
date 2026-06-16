@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lernwörter</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function zufallsWort() {
+            var liste_aller_wörter = ["Schmetterling", "Frühstück", "Abenteuer", "Bibliothek", "Freundschaft", "Geburtstag", "Hausaufgabe", "Jahreszeit", "Nachbarschaft", "Überraschung"];
+            var zufalls_zahl = Math.floor(Math.random() * liste_aller_wörter.length);
+            var zufalls_wort = liste_aller_wörter[zufalls_zahl];
+            var anzeige = document.getElementById("dasWort");
+            anzeige.innerHTML = zufalls_wort;
+            setTimeout(function() {
+                anzeige.innerHTML = "";
+            }, 2000);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="w3-container " align="center">
+        <h3 class="">Lernwörter</h3>
+        <button class="w3-btn w3-purple" onclick="zufallsWort()">Zufallsgenerator</button>
+        <p>Drücke den Knopf, um ein Lernwort zufällig auszuwählen.</p>
+    </div>
+    <div class="w3-container " align="center">
+          <h1 id="dasWort" class="w3-jumbo "></p>
+    </div>
+</body>
+</html>
