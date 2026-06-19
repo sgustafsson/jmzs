@@ -9,4 +9,4 @@ Zufallsgenerator für Lernwörter. Drücke den Knopf, um ein zufälliges Wort au
 
 ## Live-Version
 
-https://sgustafsson.github.io/jmzs/namen.html
+https://sgustafsson.github.io/jmzs/lernwoerter.html.html
